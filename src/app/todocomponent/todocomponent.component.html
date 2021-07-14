@@ -25,6 +25,7 @@
     <div class="col-md-12">
 
         <div class="task">
+            <h4>Tasks List:</h4>
 
             <ul *ngFor="let item of todolist">
                 <li (click)="strike(item)" [ngClass]="{'strike':item.isCompleted}">{{item.name}}

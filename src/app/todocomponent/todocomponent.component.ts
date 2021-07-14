@@ -33,7 +33,7 @@ export class TodocomponentComponent implements OnInit {
   }
   taskCompleted() {
     let count = 0;
-    this.todolist.map((toDo, index) => {
+    this.todolist.map((toDo) => {
       if (toDo.isCompleted) {
         count++
       }
