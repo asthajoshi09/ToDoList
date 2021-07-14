@@ -1,0 +1,34 @@
+<div class="container">
+    <h2 style="text-align: center;">To Do Component</h2>
+
+    <div class="col-md-12">
+        <form class="task" #adtask="ngForm">
+
+
+            <div class="form-group col-xs-6">
+
+                <input type="text" name="task" class="form-control" #add placeholder="Enter task" required ngMdel>
+
+            </div>
+            <div class="col-xs-4">
+                <button type="submit" class="btn btn-info" (click)="addTask(add.value); add.value=''">Add
+                    Task</button>
+            </div>
+            <div class="col-md-12">
+                <p *ngIf="error" class="text-danger">{{error}}</p>
+                <p *ngIf="todolist.length">Total {{taskCompleted()}} of {{todolist.length}} Tasks are completed.</p>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="col-md-12">
+
+        <div class="task">
+
+            <ul *ngFor="let item of todolist">
+                <li (click)="strike(item)" [ngClass]="{'strike':item.isCompleted}">{{item.name}}
+                </li>
+            </ul>
+        </div>
+    </div>
